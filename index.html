@@ -31,39 +31,7 @@
             font-family: "Inter", sans-serif;
         }
 
-        /* .tool-tip{
-            visibility: hidden;
-        }
-        .tool-img:hover .tool-tip{
-            visibility: visible;
-        } */
 
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-            /* If you want dots under the hoverable text */
-        }
-
-        /* Tooltip text */
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 6px;
-
-            /* Position the tooltip text - see examples below! */
-            position: absolute;
-            z-index: 1;
-        }
-
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
     </style>
 
 </head>
@@ -203,24 +171,8 @@
                 <p class="text-sm md:text-xl ">Yes, you can run unit tests and view the results directly within the app.
                     The integrated testing features allow for a streamlined .</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-14">
-                <div class="p-5 border-2 border-sky-200 rounded-xl">
-                    <img class="bg-slate-200 p-5 rounded-xl w-full" src="./img/joinforum.png" alt="">
-                    <div class="flex gap-3 items-center mr-5 mt-5">
-                        <img src="./img/logo/calender.png" alt="">
-                        <p>29 January 2024</p>
-                    </div>
-                    <h3 class="text-[18px] font-bold py-2">What will a mars habitat force that impact in our daily
-                        life!!!</h3>
-                    <p class="py-2">Yes, you can run unit tests and view the results directly within the app. </p>
-                    <div class="flex gap-3 items-center mr-5">
-                        <img src="./img/logo/calender.png" alt="">
-                        <div>
-                            <p class="text-sm font-bold">Cameron Williamson</p>
-                            <p>29 January 2024</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="grid-div" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-14">
+               
             </div>
         </section>
     </main>
