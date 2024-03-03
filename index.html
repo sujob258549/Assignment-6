@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind and daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="./img/joinforum.png" type="image/x-icon">
+    <!-- font-mulish -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-mulish{
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="font-mulish">
+    <header>
+        <div class="container mx-auto max-w-[90%] md:max-w-[85%]">
+            <div class="flex justify-between py-10">
+                <img src="./img/logo.png" alt="">
+                <div class="flex gap-2 flex-wrap">
+                    <img  class="px-3 hidden md:block py-2 rounded-full bg-slate-200" src="./img/logo/home.png" alt="">
+                    <img  class="px-3 hidden md:block py-2 rounded-full bg-slate-200" src="./img/logo/Vector.png" alt="">
+                    <img  class="px-3 hidden md:block py-2 rounded-full bg-slate-200" src="./img/logo/Frame.png" alt="">
+                    <img  class="px-3 hidden md:block py-2 rounded-full bg-slate-200" src="./img/logo/Frames.png" alt="">
+                    <button class="btn bg-[#797DFC] rounded-full text-xl font-bold text-white px-6" >Sing In</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto max-w-[90%] md:max-w-[85%]">
+        <!-- banner section -->
+      <section class="banner">
+        <div class=" bg-black items-center p-7 md:p-14 lg:p-20 flex flex-col md:flex-row md:gap-10  lg:gap-20 rounded-xl">
+            <div class="w-full md:w-[60%]">
+                <h1 class=" text-2xl text-white md:text-3xl lg:text-6xl font-extrabold ">Welcome to the<span class="text-[#797dfcb7]">ReTro</span> Forum</h1>
+                <p class="text-xl py-10 text-white font-medium">Share your favorite opinion and win and wp forum coffee mug!</p>
+                <div class="bg-white w-[90%] rounded-full flex gap-3 mb-10  md:mb-0 lg:gap-5 justify-between lg:justify-around">
+                    <input type="text" placeholder="Type here" class="input mt-1 rounded-full w-[100%] max-w-xs focus:outline-none focus:border-none" />
+                    <button  class="btn w-[30%] m-1 bg-[#797DFC] rounded-full text-sm  lg:text-xl font-bold text-white px-6" >Sing In</button>
+                </div>
+            </div>
+            <!-- banner write site -->
+            <div class="p-10 bg-white rounded-xl w-full md:w-[40%]">
+                <div class="flex justify-between gap-3 mt-3">
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">Registered Users</h2>
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">01</h2>
+
+                </div>
+                <div class="flex justify-between gap-3 mt-3">
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">Forum</h2>
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">05</h2>
+
+                </div>
+                <div class="flex justify-between gap-3 mt-3">
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">Topics</h2>
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">01</h2>
+
+                </div>
+                <div class="flex justify-between gap-3 mt-3">
+                    <h2 class="text-xl  md:text-sm lg:text-2xl font-medium">Replies</h2>
+                    <h2 class="text-xl md:text-sm  lg:text-2xl font-medium">01</h2>
+
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- secand section -->
+      <section class="discuss py-20">
+        <div class=" w-full text-center md:w-2/3 mx-auto md:px-0 px-3">
+            <h2 class=" text-2xl md:text-4xl font-bold pb-3 md:pb-5">Let’s Discuss</h2>
+            <p class="text-sm md:text-xl ">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+        </div>
+        <div>
+            <div>
+
+            </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- connection of js -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
