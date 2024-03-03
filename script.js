@@ -5,14 +5,17 @@ const allPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data = await res.json();
     data.posts.forEach(item => {
-        // console.log(item)
+
 
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="w-full mb-5 flex flex-col md:flex-row gap-4 bg-slate-200 p-10 rounded-xl">
                     <div class="relative w-[50px]">
                         <img class="p-2 w-28 rounded-md bg-white" src="${item.image}" alt="">
-                        <div class="h-3 w-3 rounded-full bg-red-600 absolute -top-1 -right-1"></div>
+                        <div class="h-3 w-3 active-color rounded-full ${item.isActive ? 'bg-green-500' : 'bg-red-500'} absolute -top-1 -right-1">
+                      
+                        
+                        </div>
 
                     </div>
                     <div>
@@ -42,20 +45,47 @@ const allPost = async () => {
                                 </div>
                             </div>
 
-                            <div  class="modal-show flex justify-end md:mt-0 mt-5">
+                            <div onclick="modalOpen('${item.title}', '${item.view_count}')"  class="modal-show flex 
+                            justify-end md:mt-0 mt-5">
                                 <img src="./img/logo/mail.png" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+                
                 
         `;
         // console.log(item.description)
+
         const newDiv = document.getElementById('main-div');
         newDiv.appendChild(div);
 
-
     });
+};
+
+let count = 1; 
+const modalOpen = (title, view_count) => {
+    console.log('good')
+    const modals = document.getElementById('modals');
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="flex rounded-md mt-5 justify-between bg-white p-5">
+                        <div>
+                            <p class="text-sm font-semibold">  ${title}</p>
+                        </div>
+                        <div class="flex gap-3 items-center mr-5">
+                            <img src="./img/logo/viaews.png" alt="">
+                            <p>${view_count}</p>
+                        </div>
+                    </div>
+    `;
+
+    modals.appendChild(div);
+
+    const counts = document.getElementById('count');
+    counts.innerText = count;
+
+    count++
 };
 
 
@@ -78,33 +108,20 @@ const latestPost = async () => {
             <img class="w-12 rounded-full" src="${item.profile_image}" alt="">
             <div>
                 <p class="text-sm font-bold">${item.author.name}</p>
-                <p>${item.author.posted_date}</p>
+                <p>${item.author.designation}</p>
             </div>
         </div>
     </div>
         
         `;
-console.log(item)
+        console.log(item)
         gridDiv.appendChild(div);
 
     });
 
-    };
-const modalShowCollection = document.getElementsByClassName('modal-show');
-
-for (const modalElement of modalShowCollection) {
-    console.log(modalElement);
-}
+};
 
 
-
-// const allModal = () => {
-//     const modalShow = document.getElementsByClassName('modal-show');
-//     for (const element of modalShow) {
-//         console.log(element);
-//     }
-//     console.log(modalShow)
-// };
 
 allPost();
 latestPost();
