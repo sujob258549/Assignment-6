@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -70,7 +70,7 @@
     </header>
     <main class="container mx-auto max-w-[90%] md:max-w-[85%]">
         <!-- banner section -->
-        <section class="banner">
+        <section id="main-container" class="banner relative">
             <div
                 class=" bg-black items-center p-7 md:p-14 lg:p-20 flex flex-col md:flex-row md:gap-10  lg:gap-20 rounded-xl">
                 <div class="w-full md:w-[60%]">
@@ -80,10 +80,10 @@
                         coffee mug!</p>
                     <div
                         class="bg-white w-[90%] rounded-full flex gap-3 mb-10  md:mb-0 lg:gap-5 justify-between lg:justify-around">
-                        <input type="text" placeholder="Type here"
+                        <input " id="input-value" type="text" placeholder="Type here"
                             class="input mt-1 rounded-full w-[100%] max-w-xs focus:outline-none focus:border-none" />
-                        <button
-                            class="btn w-[30%] m-1 bg-[#797DFC] rounded-full text-sm  lg:text-xl font-bold text-white px-6">Sing
+                        <button onclick="inputField()" id="input-buttons"
+                            class="btn  w-[30%] m-1 bg-[#797DFC] rounded-full text-sm  lg:text-xl font-bold text-white px-6">Sing
                             In</button>
                     </div>
                 </div>
@@ -111,6 +111,12 @@
                     </div>
                 </div>
             </div>
+            <div id="spinner" class="absolute hidden h-[100px]  w-[200px]  mx-auto -z-1 top-[150%] left-[40%] rounded-3xl  bg-white flex justify-center items-center">
+                <span class="loading loading-bars loading-xs"></span>
+                <span class="loading loading-bars loading-sm"></span>
+                <span class="loading loading-bars loading-md"></span>
+                <span class="loading loading-bars loading-lg"></span>
+            </div>
         </section>
 
         <!-- secand section -->
@@ -120,7 +126,7 @@
                 <p class="text-sm md:text-xl ">Yes, you can run unit tests and view the results directly within the app.
                     The integrated testing features allow for a streamlined .</p>
             </div>
-            <div class="flex gap-5 flex-col md:flex-row mt-10">
+            <div id="item-container" class="flex gap-5 flex-col md:flex-row mt-10">
                 <div id="main-div">
 
                 </div>
@@ -169,6 +175,7 @@
                
             </div>
         </section>
+       
     </main>
     <footer class="bg-slate-200 ">
         <div class="container mx-auto max-w-[90%] md:max-w-[85%] py-10 md:py-20">

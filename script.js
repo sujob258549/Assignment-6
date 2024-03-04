@@ -1,12 +1,13 @@
 
+const newDiv = document.getElementById('main-div');
+const spinner = document.getElementById('spinner');
+const mainDiv = document.getElementById('item-container');
 
-
-const allPost = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const allPost = async (all, valu) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?${all+valu}`);
     const data = await res.json();
+    newDiv.textContent = '';
     data.posts.forEach(item => {
-
-
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="w-full mb-5 flex flex-col md:flex-row gap-4 bg-slate-200 p-10 rounded-xl">
@@ -57,13 +58,12 @@ const allPost = async () => {
         `;
         // console.log(item.description)
 
-        const newDiv = document.getElementById('main-div');
         newDiv.appendChild(div);
 
     });
 };
 
-let count = 1; 
+let count = 1;
 const modalOpen = (title, view_count) => {
     console.log('good')
     const modals = document.getElementById('modals');
@@ -90,7 +90,7 @@ const modalOpen = (title, view_count) => {
 
 
 const latestPost = async () => {
-    const res = await fetch(' https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
     const data = await res.json();
     data.forEach(item => {
         const gridDiv = document.getElementById('grid-div');
@@ -100,7 +100,7 @@ const latestPost = async () => {
         <img class="bg-slate-200 p-5 rounded-xl w-full" src="${item.cover_image}" alt="">
         <div class="flex gap-3 items-center mr-5 mt-5">
             <img src="./img/logo/calender.png" alt="">
-            <p>${item.author.posted_date}</p>
+            <p>${item.author.posted_date ? item.author.posted_date : 'No Publish date'}</p>
         </div>
         <h3 class="text-[18px] font-bold py-2">${item.title}</h3>
         <p class="py-2">${item.description} </p>
@@ -108,7 +108,8 @@ const latestPost = async () => {
             <img class="w-12 rounded-full" src="${item.profile_image}" alt="">
             <div>
                 <p class="text-sm font-bold">${item.author.name}</p>
-                <p>${item.author.designation}</p>
+                
+                <p>${item.author.designation ? item.author.designation : 'Unknown'}</p>
             </div>
         </div>
     </div>
@@ -121,8 +122,23 @@ const latestPost = async () => {
 
 };
 
+const inputField = () => {
+    const inputValue = document.getElementById('input-value');
+    const inputValues = inputValue.value;
+    const val = 'category=';
+    allPost(val, inputValues);
+    spinner.classList.remove('hidden');
+    mainDiv.classList.add('hidden');
+    setTimeout(() => {
+        spinner.classList.add('hidden');
+        mainDiv.classList.remove('hidden'); 
+    }, 2000);
+  
+   
+};
 
-
+setTimeout
 allPost();
 latestPost();
-// allModal();
+
+
